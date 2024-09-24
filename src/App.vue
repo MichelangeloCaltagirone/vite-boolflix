@@ -2,6 +2,7 @@
 import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
 
+
 </script>
 
 <template>
@@ -14,5 +15,6 @@ import AppHeader from './components/AppHeader.vue';
 <style scoped lang="scss">
 
 @use './style/general.scss' as *;
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 </style>
