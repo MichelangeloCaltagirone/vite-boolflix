@@ -1,26 +1,37 @@
 <script>
+import { store } from '../store';
+import MainItemList from './MainItemList.vue';
+
+
+    export default {
+        data() {
+            return {
+                store
+            }
+        },
+        components: {
+            MainItemList
+        }
+    }
 
 </script>
 
 <template>
    
    <main>
+
         <div class="container">
 
-            <h1>Sono main</h1>
+            <ul>
+                <MainItemList v-for="movie in this.store.moviesList" :key="movie.id" :movie="movie" />
+            </ul>          
 
         </div>
 
-   </main>
-   
-        
-
- 
-        
-    
-    
+   </main>  
 
 </template>
 
 <style scoped>
+
 </style>
