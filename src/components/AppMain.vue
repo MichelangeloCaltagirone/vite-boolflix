@@ -22,9 +22,9 @@ import MainItemList from './MainItemList.vue';
 
         <div class="container">
 
-            <ul>
+            <div class="list d-flex flex-wrap">
                 <MainItemList v-for="movie in this.store.moviesList" :key="movie.id" :movie="movie" />
-            </ul>          
+            </div>          
 
         </div>
 
