@@ -32,13 +32,13 @@ import { store } from '../store';
 
     <div class="customBackCard">
 
-        <p> {{ movie.title }} </p>
-        <p> {{ movie.original_title }} </p>
-        <p> {{ movie.original_language }} </p>
-        <p v-if="movie.vote_average">
+        <p><span class="text-success fw-bold">Titolo:</span> {{ movie.title }} </p>
+        <p><span class="text-success fw-bold">Titolo Originale:</span> {{ movie.original_title }} </p>
+        <p><span class="text-success fw-bold">Lingua:</span> {{ movie.original_language }} </p>
+        <p v-if="movie.vote_average"><span class="text-success fw-bold">Voto: </span>
             <span v-for="n in (Math.ceil(movie.vote_average / 2))"><i class="fa-solid fa-star"></i></span>
         </p>
-        <p> {{ movie.overview }} </p>
+        <p><span class="text-success fw-bold">Overview:</span> {{ movie.overview }} </p>
     </div>
 
   </div>

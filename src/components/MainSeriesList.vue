@@ -32,13 +32,13 @@ import { store } from '../store';
 
     <div class="customBackCard">
 
-        <p> {{ series.name }} </p>
-        <p> {{ series.original_name }} </p>
-        <p> {{ series.original_language }} </p>
-        <p v-if="series.vote_average">
+        <p><span class="text-success fw-bold">Titolo:</span> {{ series.name }} </p>
+        <p><span class="text-success fw-bold">Titolo Originale:</span> {{ series.original_name }} </p>
+        <p><span class="text-success fw-bold">Lingua:</span> {{ series.original_language }} </p>
+        <p v-if="series.vote_average"><span class="text-success fw-bold">Voto: </span> 
             <span v-for="n in (Math.ceil(series.vote_average / 2))"><i class="fa-solid fa-star"></i></span>
         </p>
-        <p> {{ series.overview }} </p>
+        <p><span class="text-success fw-bold">Overview:</span>{{ series.overview }} </p>
     </div>
 
   </div>
