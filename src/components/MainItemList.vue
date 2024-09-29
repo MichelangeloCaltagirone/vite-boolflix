@@ -23,20 +23,49 @@ import { store } from '../store';
 
 <template>
 
-    <div class="customCard">
+  <div class="customContainer">
+
+    <div class="customFrontCard">
+       
+        <img :src="this.suorce + this.size + movie.poster_path" :alt="movie.title">
+    </div>
+
+    <div class="customBackCard">
+
         <p> {{ movie.title }} </p>
         <p> {{ movie.original_title }} </p>
         <p> {{ movie.original_language }} </p>
         <p> {{ movie.vote_average }} </p>
-        <img :src="this.suorce + this.size + movie.poster_path" :alt="movie.title">
+        <p class="overflow-auto"> {{ movie.overview }} </p>
     </div>
+
+  </div>
+    
 
 </template>
 
 <style scoped>
-.customCard {
-    flex-basis: 33%;
-    padding: 5px 15px;
+.customContainer {
+    width: 342px;
+    height: 513px;
+    margin: 3rem auto;
+
+    &:hover {
+        .customFrontCard {
+            display: none;
+        }
+        .customBackCard {
+            display: block;
+        }
+    }
+}
+
+.customBackCard {
+    display: none;
+}
+img {
+    width: 342px;
+    height: 513px;
 }
 
 </style>

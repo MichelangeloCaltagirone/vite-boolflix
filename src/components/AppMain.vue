@@ -22,7 +22,9 @@ import MainItemList from './MainItemList.vue';
 
         <div class="container">
 
-            <div class="list d-flex flex-wrap">
+            <h1 class="text-center py-3 text-danger fw-bold">Movie List</h1>
+
+            <div class="list d-flex flex-wrap">                
                 <MainItemList v-for="movie in this.store.moviesList" :key="movie.id" :movie="movie" />
             </div>          
 
@@ -33,5 +35,10 @@ import MainItemList from './MainItemList.vue';
 </template>
 
 <style scoped>
+
+main {
+    background-color: #434343;
+    
+}
 
 </style>

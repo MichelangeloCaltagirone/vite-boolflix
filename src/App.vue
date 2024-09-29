@@ -45,27 +45,6 @@ import { store } from './store';
         }
     }
     
-    // methods: {
-        // getYugiohCardList(apiUrl, apiKey, query){
-        //     axios.get(this.(${apiKey}+${apiKey}), {
-        //         params: {
-        //             num: 80,
-        //             offset: 0
-        //         }
-        //     })            
-        //     .then(response => {
-           
-        //     this.awaitedCardsList = response.data.data})}
-        // },
-        // created() {
-
-        //     this.getYugiohCardList()
-        //     setTimeout(() => {
-        //     this.cardsList = this.awaitedCardsList;
-        //     this.loading = false 
-        // }, 4000)
-        // },
-    
 
     }
     
@@ -83,5 +62,6 @@ import { store } from './store';
 
 @use './style/general.scss' as *;
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
 
 </style>
