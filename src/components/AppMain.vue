@@ -1,6 +1,8 @@
 <script>
 import { store } from '../store';
-import MainItemList from './MainItemList.vue';
+import MainMovieList from './MainMovieList.vue';
+import MainSeriesList from './MainSeriesList.vue';
+
 
 
     export default {
@@ -10,7 +12,8 @@ import MainItemList from './MainItemList.vue';
             }
         },
         components: {
-            MainItemList
+            MainMovieList,
+            MainSeriesList
         }
     }
 
@@ -25,13 +28,13 @@ import MainItemList from './MainItemList.vue';
             <h1 class="text-center py-3 text-danger fw-bold">Movie List</h1>
 
             <div class="list d-flex flex-wrap">                
-                <MainItemList v-for="movie in this.store.moviesList" :key="movie.id" :movie="movie" />
+                <MainMovieList v-for="movie in this.store.moviesList" :key="movie.id" :movie="movie" />
             </div>
-            
-            <h1 class="text-center py-3 text-danger fw-bold">Movie List</h1>
+
+            <h1 class="text-center py-3 text-primary fw-bold">TV Series List</h1>
 
             <div class="list d-flex flex-wrap">                
-                <MainItemList v-for="movie in this.store.moviesList" :key="movie.id" :movie="movie" />
+                <MainSeriesList v-for="series in this.store.tvSeriesList" :key="series.id" :series="series" />
             </div>          
 
         </div>

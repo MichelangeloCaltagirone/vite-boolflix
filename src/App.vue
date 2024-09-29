@@ -20,11 +20,6 @@ import { store } from './store';
         store
     },
     methods: {
-        getSearchField() {
-            console.log('evento arrivatto in appVue'),
-            console.log(this.store.searchedInput)
-        },
-
         getMoviesList(query) {
             axios.get(this.apiMovieUrl, {
                 params: {
@@ -48,15 +43,12 @@ import { store } from './store';
             })
             .then((response) => {
                 console.log(response.data.results);
-                this.tvSeriesList = response.data-results
+                this.store.tvSeriesList = response.data.results
             })
             .catch(function (error) {
                 console.log(error);
             })
-
             }
-
-            
         }
     }
     

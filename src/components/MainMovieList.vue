@@ -36,7 +36,7 @@ import { store } from '../store';
         <p> {{ movie.original_title }} </p>
         <p> {{ movie.original_language }} </p>
         <p> {{ movie.vote_average }} </p>
-        <p class="overflow-auto"> {{ movie.overview }} </p>
+        <p> {{ movie.overview }} </p>
     </div>
 
   </div>
