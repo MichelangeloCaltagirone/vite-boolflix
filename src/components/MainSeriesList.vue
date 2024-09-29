@@ -35,7 +35,9 @@ import { store } from '../store';
         <p> {{ series.name }} </p>
         <p> {{ series.original_name }} </p>
         <p> {{ series.original_language }} </p>
-        <p> {{ series.vote_average }} </p>
+        <p v-if="series.vote_average">
+            <span v-for="n in (Math.ceil(series.vote_average / 2))"><i class="fa-solid fa-star"></i></span>
+        </p>
         <p> {{ series.overview }} </p>
     </div>
 
@@ -66,6 +68,9 @@ import { store } from '../store';
 img {
     width: 342px;
     height: 513px;
+}
+.fa-star {
+    color:goldenrod
 }
 
 </style>
