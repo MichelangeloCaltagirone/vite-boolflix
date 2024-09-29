@@ -26,19 +26,25 @@ import { store } from '../store';
   <div class="customContainer">
 
     <div class="customFrontCard">
+
+        <img v-if="series.poster_path" :src="this.suorce + this.size + series.poster_path" :alt="series.name">
+        <div v-else class="substitutePic px-3 d-flex flex-column justify-content">
+           <h2 class="text-info fw-bold pt-3">No Poster Pic for:</h2>
+           <span class="text-white my-5 fs-5">{{ series.name }}</span>
+           <span class="text-center fs-3">(Hover for more info)</span> 
+        </div>
        
-        <img :src="this.suorce + this.size + series.poster_path" :alt="series.name">
     </div>
 
     <div class="customBackCard">
 
-        <p><span class="text-success fw-bold">Titolo:</span> {{ series.name }} </p>
+        <p class="text-white"><span class="text-success fw-bold">Titolo:</span> {{ series.name }} </p>
         <p><span class="text-success fw-bold">Titolo Originale:</span> {{ series.original_name }} </p>
         <p><span class="text-success fw-bold">Lingua:</span> {{ series.original_language }} </p>
         <p v-if="series.vote_average"><span class="text-success fw-bold">Voto: </span> 
             <span v-for="n in (Math.ceil(series.vote_average / 2))"><i class="fa-solid fa-star"></i></span>
         </p>
-        <p><span class="text-success fw-bold">Overview:</span>{{ series.overview }} </p>
+        <p><span class="text-success fw-bold">Overview: </span> {{ series.overview }} </p>
     </div>
 
   </div>
@@ -71,6 +77,10 @@ img {
 }
 .fa-star {
     color:goldenrod
+}
+.substitutePic {
+height: 513px;
+background-color: black;
 }
 
 </style>

@@ -27,18 +27,23 @@ import { store } from '../store';
 
     <div class="customFrontCard">
        
-        <img :src="this.suorce + this.size + movie.poster_path" :alt="movie.title">
+        <img v-if="movie.poster_path" :src="this.suorce + this.size + movie.poster_path" :alt="movie.title">
+        <div v-else class="substitutePic px-3 d-flex flex-column justify-content">
+           <h2 class="text-info fw-bold pt-3">No Poster Pic for:</h2>
+           <span class="text-white my-5 fs-5">{{ movie.title }}</span>
+           <span class="text-center fs-3">(Hover for more info)</span> 
+        </div>
     </div>
 
     <div class="customBackCard">
 
-        <p><span class="text-success fw-bold">Titolo:</span> {{ movie.title }} </p>
+        <p class="text-white"><span class="text-success fw-bold">Titolo:</span> {{ movie.title }} </p>
         <p><span class="text-success fw-bold">Titolo Originale:</span> {{ movie.original_title }} </p>
         <p><span class="text-success fw-bold">Lingua:</span> {{ movie.original_language }} </p>
         <p v-if="movie.vote_average"><span class="text-success fw-bold">Voto: </span>
             <span v-for="n in (Math.ceil(movie.vote_average / 2))"><i class="fa-solid fa-star"></i></span>
         </p>
-        <p><span class="text-success fw-bold">Overview:</span> {{ movie.overview }} </p>
+        <p><span class="text-success fw-bold">Overview: </span>{{ movie.overview }} </p>
     </div>
 
   </div>
@@ -71,6 +76,10 @@ img {
 }
 .fa-star {
     color:goldenrod
+}
+.substitutePic {
+height: 513px;
+background-color: black;
 }
 
 </style>
